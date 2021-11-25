@@ -1,0 +1,24 @@
+import sqlite3
+conexão = sqlite3.connect("estacionamento.db")
+cursor = conexão.cursor()
+# senteça sql para criar tabela
+sql = 'create table cliente('\
+      'id integer primary key autoincrement,'\
+      'nome varchar(50),'\
+      'cpf varchar (20),'\
+      'endereco varchar (10),'\
+      'telefone varchar (10))'
+
+cursor.execute(sql)
+# sentença sql para inserir registros
+sql = 'insert into cliente (nome,cpf,endereco,telefone) values (?,?,?,?)'
+registros = [('Maria', '01425802547', 'Q C casa 20', '86 9888-4547'),
+             ('Joao', '12017182211', 'Q d casa 21', '86 78221-4547')]
+for reg in registros:
+    cursor.execute(sql, reg)
+
+# gravação no banco de dados. sem commit os dados não são gravados.
+conexão.commit()
+
+cursor.close()
+conexão.close()
