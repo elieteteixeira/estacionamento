@@ -1,0 +1,11 @@
+class StatusVaga:
+    def __init__(self, disponivel, indisponivel):
+        self.__disponivel = disponivel
+        self.__indisponivel = indisponivel
+
+    @property
+    def disponivel(self):
+        return self.__disponivel
+    @property
+    def indisponivel(self):
+        return self.__indisponivel

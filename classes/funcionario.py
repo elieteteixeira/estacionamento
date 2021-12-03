@@ -1,5 +1,4 @@
-
-class funcionario:
+class Funcionario:
     def __init__(self, nome, cpf, endereco, telefone, matricula, funcao):
         self.__nome = nome
         self.__cpf = cpf
@@ -27,3 +26,5 @@ class funcionario:
 
     def __str__(self) -> str:
         return f'Nome: {self.__nome}\nCPF: {self.__cpf}\nEndereco: {self.__endereco}\nTelefone: {self.__telefone}\nMatricula: {self.__matricula}\nFunção: {self.__funcao}'
+
+
