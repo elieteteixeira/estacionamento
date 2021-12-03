@@ -1,8 +1,7 @@
 
-
 class Patio:
-    def __init__(self, descricao, taxaHora):
-        self.__descricao = descricao
+    def __init__(self, descricaovaga, taxaHora):
+        self.__descricaovaga = descricaovaga
         self.__taxaHora = taxaHora
         self.__vagas = []
 
