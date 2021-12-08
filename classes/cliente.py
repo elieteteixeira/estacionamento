@@ -6,6 +6,7 @@ class Cliente:
         self.__endereco = endereco
         self.__contato = contato
         self.__veiculos = []
+        self.__clientes = []
 
     @property
     def nome(self):
@@ -23,6 +24,17 @@ class Cliente:
         self.__veiculos.append(veiculo)
         print('o veiculo  modelo {}, foi cadastrado em nome do cliente {}'.format(veiculo.descricao, self.__nome))
 
+    def excluirVeiculo(self, veiculo):
+        self.__veiculos.remove(veiculo)
+        print('veiculo excluido')
+
+    def cadastrarCliente(self, cliente):
+        self.__clientes.append(cliente)
+        print('cliente cadastrado')
+
+    def excluirCliente(self, cliente):
+        self.__clientes.remove(cliente)
+        print('cliente excluido')
 
     def __str__(self):
         cl = 'cliente :\n'
@@ -32,6 +44,7 @@ class Cliente:
         for i in range(len(self.__veiculos)):
             s3 = s3 + 'veiculo :' + self.__veiculos[i].descricao + ' ' + 'placa :' + self.__veiculos[i].placa + '\n'
         return cl + s1 + s2 + s3
+
 
 
          
