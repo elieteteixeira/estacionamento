@@ -1,5 +1,5 @@
 
-from Cliente import *;
+
 from Estacionamento import *;
 
 class Veiculo:
@@ -25,10 +25,17 @@ class Veiculo:
     def proprietario(self):
         return self.__proprietario
 
+    def cadastrarVeiculo(self, veiculo):
+        self.__veiculos.append(veiculo)
+        print('o veiculo  modelo {}, foi cadastrado em nome do cliente {}'.format(veiculo.descricao, self.__nome))
+
+    def excluirVeiculo(self, veiculo):
+        self.__veiculos.remove(veiculo)
+        print('veiculo excluido')
+
 
     def __str__(self):
-          return f'Descrição: {self.__modelo}\nPlaca: {self.__placa}\ncor :{self.__cor}\n proprietario : {self.__proprietario}'
-
+          return f'Descrição: {self.__modelo}\nPlaca: {self.__placa}\ncor :{self.__cor}\n proprietario :{self__proprietario}'
 
 
 
