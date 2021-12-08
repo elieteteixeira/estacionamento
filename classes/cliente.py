@@ -23,6 +23,7 @@ class Cliente:
         self.__veiculos.append(veiculo)
         print('o veiculo  modelo {}, foi cadastrado em nome do cliente {}'.format(veiculo.descricao, self.__nome))
 
+
     def __str__(self):
         cl = 'cliente :\n'
         s1 = (' nome :{}\ncpf :{}\ncontato :{}\n'.format(self.__nome, self.__cpf, self.__contato))
