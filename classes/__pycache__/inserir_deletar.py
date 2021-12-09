@@ -6,7 +6,7 @@ Cursor = conexão.cursor()
 #### inserir registros na tabela
 
 varsql = ""
-
+## função de inserir registros na tabela
 def inserir(conexão, sql):
     try:
         Cursor.execute(varsql)
@@ -16,7 +16,7 @@ def inserir(conexão, sql):
     except Error as ex:
         print(ex)
 
-
+## função de deletar registros na tabela
 def deletar(conexão, sql):
     try:
         Cursor.execute(varsql)
@@ -26,9 +26,18 @@ def deletar(conexão, sql):
     except Error as ex:
         print(ex)
 
-## para inserir 
-inserir(conexão, varsql)
+## função de atualização dos dados das tabelas
+def atualizar(conexão, sql):
+    try:
+        Cursor.execute(varsql)
+        conexão.commit()
+        print("registros atualizados")
 
-## para excluir
+    except Error as ex:
+        print(ex)
 
-deletar(conexão, varsql)
+## função de consulta no banco de dados
+def consultar(conexão, sql):    
+    Cursor.execute(varsql)
+    resultado = Cursor.fetchall()
+    return resultado
