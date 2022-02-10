@@ -1,6 +1,11 @@
 
 import PySimpleGUI as sg
+from telaPatio import TelaPatio
 from telaRegistro import Registro
+from telaRegistroSaida import TelaRegitroSaida
+from telaTipoVeiculo import TelaTipoVeiculo
+
+# from telaRegistroSaida import Saida
 
 
 
@@ -8,10 +13,12 @@ from telaRegistro import Registro
 class TelaPrincipal():
     def __init__(self) -> None:
         self.entrada = Registro()
+        
 
     def principal(self):
 
         menu = [
+            ['&Cadastro', ['&Tipo Veiculo', 'Patio']],
             ['&Registro', ['&Entrada', 'Saida']],
         ]
 
@@ -26,11 +33,14 @@ class TelaPrincipal():
 
 tela = TelaPrincipal()
 entrada = Registro()
+tipo_veiculo = TelaTipoVeiculo()
+janela_patio = TelaPatio()
+saida = TelaRegitroSaida()
 
 
 
 
-janelaPrincipal, janelaEntrada = tela.principal(), None
+janelaPrincipal, janelaEntrada, janelaSaida, janelaTipo, telaPatio = tela.principal(), None, None, None, None
 
 while True:
     
@@ -38,7 +48,15 @@ while True:
 
     if window == janelaPrincipal and event == sg.WIN_CLOSED:
         break
-    
+
+    elif window == janelaPrincipal and event == "Tipo Veiculo":
+        janelaTipo = tipo_veiculo.tela()
+
+    elif window == janelaPrincipal and event == "Patio":
+        telaPatio = janela_patio.tela()    
 
     elif window == janelaPrincipal and event == "Entrada":
         janelaEntrada = entrada.tela()
+
+    elif window == janelaPrincipal and event == "Saida":
+        janelaSaida = saida.tela()
