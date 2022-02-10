@@ -1,5 +1,6 @@
 
 from xmlrpc.client import Error
+from atualizada.banco import TipoVeiculo
 from banco import *
 
 
