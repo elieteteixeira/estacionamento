@@ -38,7 +38,7 @@ class Registro:
                 placa = values['-PLACA-']
                 cadastrarEntrada(placa, query)
 
-                [sg.popup('Cadastrado com sucesso !', text_color="#04BEB3")]
+                [sg.popup('Cadastrado com sucesso !', text_color="#ffa500")]
 
 
 

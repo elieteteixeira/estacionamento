@@ -8,12 +8,9 @@ from telaTipoVeiculo import TelaTipoVeiculo
 # from telaRegistroSaida import Saida
 
 
-
-
 class TelaPrincipal():
     def __init__(self) -> None:
         self.entrada = Registro()
-        
 
     def principal(self):
 
@@ -23,13 +20,16 @@ class TelaPrincipal():
         ]
 
         layout = [
-            [sg.Menu(menu, tearoff=False, pad=(200,1), background_color="#fff")],
+            [sg.Menu(menu, tearoff=False, pad=(
+                200, 1), background_color="#fff")],
         ]
 
-        self.janela = sg.Window("Tela Principal", size=(960, 540), layout=layout, finalize=True)
-        self.janela.set_min_size((960,540))
+        self.janela = sg.Window("Tela Principal EG Estacionamento Rotativo!", size=(
+            960, 540), layout=layout, finalize=True)
+        self.janela.set_min_size((960, 540))
 
         return self.janela
+
 
 tela = TelaPrincipal()
 entrada = Registro()
@@ -38,12 +38,11 @@ janela_patio = TelaPatio()
 saida = TelaRegitroSaida()
 
 
-
-
-janelaPrincipal, janelaEntrada, janelaSaida, janelaTipo, telaPatio = tela.principal(), None, None, None, None
+janelaPrincipal, janelaEntrada, janelaSaida, janelaTipo, telaPatio = tela.principal(
+), None, None, None, None
 
 while True:
-    
+
     window, event, values = sg.read_all_windows()
 
     if window == janelaPrincipal and event == sg.WIN_CLOSED:
@@ -53,7 +52,7 @@ while True:
         janelaTipo = tipo_veiculo.tela()
 
     elif window == janelaPrincipal and event == "Patio":
-        telaPatio = janela_patio.tela()    
+        telaPatio = janela_patio.tela()
 
     elif window == janelaPrincipal and event == "Entrada":
         janelaEntrada = entrada.tela()
